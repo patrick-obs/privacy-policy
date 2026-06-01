@@ -3,83 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — O'Brien Field Docs</title>
+    <title>OBrien Field Docs — Privacy Policy</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1d1d1f; background: #fff; padding: 2rem 1rem; }
-        .container { max-width: 720px; margin: 0 auto; }
-        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
-        .app-name { color: #6e6e73; font-size: 1rem; margin-bottom: 0.5rem; }
-        .effective { color: #6e6e73; font-size: 0.875rem; margin-bottom: 2rem; }
-        h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.5rem; }
-        p, li { font-size: 1rem; margin-bottom: 0.75rem; }
-        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #d2d2d7; color: #6e6e73; font-size: 0.875rem; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #f5f5f7;
+        }
+        .header {
+            background: #008b8b;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 28px; font-weight: 600; }
+        .header p { opacity: 0.85; margin-top: 8px; font-size: 15px; }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 36px;
+            margin-bottom: 12px;
+            color: #008b8b;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        p, li { font-size: 15px; color: #333; margin-bottom: 8px; }
+        ul { padding-left: 20px; margin-bottom: 12px; }
+        li { margin-bottom: 4px; }
+        a { color: #008b8b; }
+        .lead { font-size: 16px; }
+        .effective { text-align: center; color: #666; font-size: 13px; margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin-top: 12px;
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>OBrien Field Docs</h1>
+        <p>Privacy Policy</p>
+        <span class="badge">Internal Use Application</span>
+    </div>
+
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="app-name">O'Brien Field Docs for iOS</p>
-        <p class="effective">Effective Date: February 13, 2026</p>
+        <p class="lead">OBrien Field Docs (&ldquo;the App&rdquo;) is published by O&rsquo;Brien Systems (&ldquo;we&rdquo;, &ldquo;us&rdquo;). The App is a field-documentation tool for our staff and authorized users to document site walks, blueprints, punch lists, room scans, quotes, and related project work. This policy explains what data the App handles and where it goes.</p>
 
-        <h2>Overview</h2>
-        <p>O'Brien Field Docs ("the App") is an internal enterprise tool developed by O'Brien Systems for field documentation, blueprint annotation, and project management. This policy describes how we collect, use, and protect your information.</p>
+        <h2>Who can use the App</h2>
+        <p>Access requires signing in with a Microsoft Entra ID (Azure AD) account on the <strong>@obriensys.com</strong> domain. The App is intended for O&rsquo;Brien Systems personnel and authorized partners, not the general public.</p>
 
-        <h2>Information We Collect</h2>
-        <p>The App collects the following information to provide its core functionality:</p>
+        <h2>Information we handle</h2>
+
+        <h3>Account &amp; identity (via Microsoft Entra ID)</h3>
+        <p>When you sign in, we receive your name, work email, and job title from Microsoft to identify you and control access. Authentication tokens are stored securely in the device Keychain. We never see or store your Microsoft password.</p>
+
+        <h3>Project &amp; field data you create</h3>
+        <p>Projects, blueprints, pins, observations, checklists, quotes, expenses, contacts, calendar items, and notes. This is stored locally on your device (SwiftData) and, if enabled, backed up to your organization&rsquo;s Microsoft OneDrive.</p>
+
+        <h3>Photos, videos &amp; voice notes</h3>
+        <p>Photos and videos you capture or import for documentation, and voice notes you record. Voice notes may be transcribed using on-device/Apple speech recognition.</p>
+
+        <h3>Room scans (LiDAR)</h3>
+        <p>On supported devices, the App uses the LiDAR sensor to scan rooms and generate floor plans and measurements. Scan data is stored with the associated project.</p>
+
+        <h3>Microsoft 365 data (only with your consent)</h3>
+        <p>With your permission, the App can read your Outlook contacts and recent email metadata via Microsoft Graph to help you import business contacts and identify potential leads into the CRM. This requires explicit Microsoft consent to the relevant permissions and is used only to build the in-app proposals you review and approve.</p>
+
+        <h2>How we use third-party services</h2>
+
+        <h3>Anthropic (Claude AI)</h3>
+        <p>AI features &mdash; photo/voice classification, design assistance, receipt scanning, and text improvement &mdash; send the relevant content (text and/or images) to Anthropic&rsquo;s API to generate results. Free-text we send is filtered to remove obvious personal identifiers (emails, phone numbers, SSNs) before transmission. Images may contain whatever is in frame. Anthropic processes this data to return a result and does not use API data to train its models. See Anthropic&rsquo;s privacy policy at <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>.</p>
+
+        <h3>Microsoft (Entra ID, Graph, OneDrive)</h3>
+        <p>Used for sign-in, optional contact import, and optional cloud backup, as described above. Governed by Microsoft&rsquo;s privacy terms.</p>
+
+        <p><strong>We do not sell your data, and we do not use it for advertising.</strong></p>
+
+        <h2>Device permissions the App requests</h2>
         <ul>
-            <li><strong>Account Information:</strong> Your name and email address, obtained through Microsoft Entra ID (Azure AD) authentication with your @obriensys.com organizational account.</li>
-            <li><strong>Project Data:</strong> Projects, blueprints, pins, observations, notes, checklists, quotes, and other content you create within the App. This data is stored locally on your device.</li>
-            <li><strong>Photos and Media:</strong> Photos and videos you capture or import to document field observations. These are stored locally on your device and are only uploaded when you explicitly use the backup or sync features.</li>
-            <li><strong>Location Data (Optional):</strong> If you grant permission, the App may record location coordinates associated with observations for reference purposes.</li>
+            <li><strong>Camera</strong> &mdash; photograph punch-list items and field conditions.</li>
+            <li><strong>Microphone</strong> &mdash; record voice notes for observations.</li>
+            <li><strong>Speech recognition</strong> &mdash; transcribe voice notes.</li>
+            <li><strong>Photo library</strong> &mdash; import inspection photos and save annotated photos.</li>
+            <li><strong>LiDAR / world sensing</strong> &mdash; scan rooms to generate floor plans.</li>
+            <li><strong>Face ID</strong> &mdash; optional app lock to protect project data.</li>
+        </ul>
+        <p>Each permission is requested only when first needed, and the App functions (with that feature unavailable) if you decline.</p>
+
+        <h2>Data storage, retention &amp; security</h2>
+        <p>Your data lives primarily on your device and, if backup is enabled, in your organization&rsquo;s OneDrive. Authentication tokens are kept in the device Keychain. Network traffic to Anthropic and Microsoft is encrypted in transit (TLS). Retention follows O&rsquo;Brien Systems&rsquo; internal data-retention practices; data is removed when a project is deleted or when you sign out and clear local data, subject to backup copies retained per company policy.</p>
+
+        <h2>Your choices</h2>
+        <ul>
+            <li>Sign out at any time to end the session on the device.</li>
+            <li>Decline any device permission (camera, mic, photos, LiDAR, Face ID).</li>
+            <li>Decline Microsoft Graph contact-import consent.</li>
+            <li>Avoid AI features if you prefer not to send content to Anthropic; the App provides manual alternatives for AI-assisted actions.</li>
+            <li>Request access, correction, or deletion of your data by contacting us (below).</li>
         </ul>
 
-        <h2>How We Use Your Information</h2>
-        <ul>
-            <li><strong>Authentication:</strong> Your Microsoft Entra ID credentials are used solely to verify your identity and authorize access to the App.</li>
-            <li><strong>App Functionality:</strong> Project data, photos, and observations are used to provide the core features of the App including blueprint annotation, reporting, and quote generation.</li>
-            <li><strong>AI Features:</strong> When you use the AI design assistant, your project context may be sent to Anthropic's Claude API to generate responses. No personal information beyond project content is included in these requests.</li>
-            <li><strong>Cloud Backup:</strong> If you enable OneDrive backup, your project data is synced to your organization's Microsoft OneDrive account.</li>
-        </ul>
+        <h2>Children</h2>
+        <p>The App is a workplace tool and is not directed to children under 13.</p>
 
-        <h2>Data Storage and Security</h2>
-        <p>All project data is stored locally on your device using encrypted storage provided by iOS. Cloud backups are transmitted over encrypted HTTPS connections and stored in your organization's Microsoft 365 tenant, subject to your organization's security policies.</p>
+        <h2>Changes</h2>
+        <p>We may update this policy; the &ldquo;Last updated&rdquo; date will change accordingly. Material changes will be communicated to users.</p>
 
-        <h2>Third-Party Services</h2>
-        <ul>
-            <li><strong>Microsoft Entra ID:</strong> Used for authentication. Subject to <a href="https://privacy.microsoft.com/en-us/privacystatement">Microsoft's Privacy Statement</a>.</li>
-            <li><strong>Anthropic Claude API:</strong> Used for AI design assistance features. Subject to <a href="https://www.anthropic.com/privacy">Anthropic's Privacy Policy</a>.</li>
-            <li><strong>Microsoft OneDrive:</strong> Used for optional cloud backup. Subject to your organization's Microsoft 365 policies.</li>
-        </ul>
+        <h2>Contact</h2>
+        <p>O&rsquo;Brien Systems &mdash; privacy inquiries: <a href="mailto:privacy@obriensys.com">privacy@obriensys.com</a><br>
+        <a href="https://obriensys.com">obriensys.com</a></p>
 
-        <h2>Data Sharing</h2>
-        <p>We do not sell, rent, or share your personal information with third parties for marketing purposes. Data is only shared with the third-party services listed above as required for the App's functionality.</p>
-
-        <h2>Data Retention</h2>
-        <p>Your data remains on your device until you delete it or uninstall the App. Cloud backups are retained according to your organization's data retention policies.</p>
-
-        <h2>Your Rights</h2>
-        <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us. You can also delete your local data by uninstalling the App.</p>
-
-        <h2>Children's Privacy</h2>
-        <p>The App is not intended for use by children under 13. We do not knowingly collect personal information from children.</p>
-
-        <h2>Changes to This Policy</h2>
-        <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated effective date.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have questions about this privacy policy or your data, contact:</p>
-        <p>
-            O'Brien Systems<br>
-            Email: <a href="mailto:patrickob1999@gmail.com">patrickob1999@gmail.com</a>
-        </p>
-
-        <div class="footer">
-            <p>&copy; 2026 O'Brien Systems. All rights reserved.</p>
-        </div>
+        <p class="effective">Last Updated: June 1, 2026</p>
     </div>
 </body>
 </html>
