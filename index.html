@@ -73,7 +73,7 @@
         <p>When you sign in, we receive your name, work email, and job title from Microsoft to identify you and control access. Authentication tokens are stored securely in the device Keychain. We never see or store your Microsoft password.</p>
 
         <h3>Project &amp; field data you create</h3>
-        <p>Projects, blueprints, pins, observations, checklists, quotes, expenses, contacts, calendar items, and notes. This is stored locally on your device (SwiftData) and, if enabled, backed up to your organization&rsquo;s Microsoft OneDrive.</p>
+        <p>Projects, blueprints, pins, observations, checklists, quotes, expenses, contacts, calendar items, and notes. This is stored locally on your device (SwiftData). If enabled, it is also backed up to your organization&rsquo;s Microsoft OneDrive and, where your organization turns on library sync, kept in a shared Microsoft 365 document library (see &ldquo;Calendar, email &amp; sharing&rdquo; below).</p>
 
         <h3>Photos, videos &amp; voice notes</h3>
         <p>Photos and videos you capture or import for documentation, and voice notes you record. Voice notes may be transcribed using on-device/Apple speech recognition.</p>
@@ -84,13 +84,29 @@
         <h3>Microsoft 365 data (only with your consent)</h3>
         <p>With your permission, the App can read your Outlook contacts and recent email metadata via Microsoft Graph to help you import business contacts and identify potential leads into the CRM. This requires explicit Microsoft consent to the relevant permissions and is used only to build the in-app proposals you review and approve.</p>
 
+        <h3>Calendar, email &amp; sharing (Microsoft 365)</h3>
+        <ul>
+            <li><strong>Outlook calendar.</strong> The first time you open the Calendar module while signed in, the App turns on two-way sync with your Outlook calendar. It reads events in the synced date range (subject, start and end, location, notes, and categories) and writes back events you create or change in the App. You can turn this off at any time with the &ldquo;Sync Outlook Calendar&rdquo; setting.</li>
+            <li><strong>Sending reports by email.</strong> When you choose to email a report, the App sends it from your own Microsoft 365 mailbox through Microsoft Graph, to the recipients you enter, with the report attached.</li>
+            <li><strong>Sharing projects.</strong> When you share a project with a coworker, the App shares the project file from your OneDrive with that @obriensys.com user and looks up names and email addresses in the O&rsquo;Brien Systems directory to find them.</li>
+            <li><strong>Publishing site walks.</strong> When you choose Publish to Web, the App uploads that project&rsquo;s blueprint page images, pin photos, reports, and a summary file to a shared O&rsquo;Brien Systems SharePoint library, where authorized O&rsquo;Brien Systems staff can view them in our internal web portal. Pin status changes and comments made there are brought back into the App the next time you publish.</li>
+            <li><strong>Field Docs library sync.</strong> Where your organization turns it on, the App keeps your projects in sync with a shared Field Docs SharePoint library so that authorized O&rsquo;Brien Systems staff and devices see the same project data.</li>
+            <li><strong>Insurance certificates.</strong> When you import certificates of insurance, the App lists files in a designated folder in your OneDrive and downloads only the ones you choose.</li>
+        </ul>
+
+        <h3>Addresses &amp; mileage</h3>
+        <p>When you search for a project address or calculate driving mileage for an expense, the addresses you enter are sent to Apple&rsquo;s maps service to find the location and route. The App does not track your device&rsquo;s location.</p>
+
         <h2>How we use third-party services</h2>
 
         <h3>Anthropic (Claude AI)</h3>
         <p>AI features &mdash; photo/voice classification, design assistance, receipt scanning, and text improvement &mdash; send the relevant content (text and/or images) to Anthropic&rsquo;s API to generate results. Free-text we send is filtered to remove obvious personal identifiers (emails, phone numbers, SSNs) before transmission. Images may contain whatever is in frame. Anthropic processes this data to return a result and does not use API data to train its models. See Anthropic&rsquo;s privacy policy at <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>.</p>
 
-        <h3>Microsoft (Entra ID, Graph, OneDrive)</h3>
-        <p>Used for sign-in, optional contact import, and optional cloud backup, as described above. Governed by Microsoft&rsquo;s privacy terms.</p>
+        <h3>Microsoft (Entra ID, Graph, OneDrive, SharePoint, Outlook)</h3>
+        <p>Used for sign-in, optional contact import, cloud backup, calendar sync, sending reports, project sharing, and the shared SharePoint libraries, as described above. Governed by Microsoft&rsquo;s privacy terms.</p>
+
+        <h3>Apple (maps)</h3>
+        <p>Addresses you enter are sent to Apple&rsquo;s maps service for address search and driving routes. Governed by Apple&rsquo;s privacy terms.</p>
 
         <p><strong>We do not sell your data, and we do not use it for advertising.</strong></p>
 
@@ -106,13 +122,14 @@
         <p>Each permission is requested only when first needed, and the App functions (with that feature unavailable) if you decline.</p>
 
         <h2>Data storage, retention &amp; security</h2>
-        <p>Your data lives primarily on your device and, if backup is enabled, in your organization&rsquo;s OneDrive. Authentication tokens are kept in the device Keychain. Network traffic to Anthropic and Microsoft is encrypted in transit (TLS). Retention follows O&rsquo;Brien Systems&rsquo; internal data-retention practices; data is removed when a project is deleted or when you sign out and clear local data, subject to backup copies retained per company policy.</p>
+        <p>Your data lives primarily on your device and, depending on the features you use, in your organization&rsquo;s OneDrive, Outlook calendar, and shared SharePoint libraries. Authentication tokens are kept in the device Keychain. Network traffic to Anthropic, Microsoft, and Apple is encrypted in transit (TLS). Retention follows O&rsquo;Brien Systems&rsquo; internal data-retention practices; data is removed when a project is deleted or when you sign out and clear local data, subject to backup copies retained per company policy.</p>
 
         <h2>Your choices</h2>
         <ul>
             <li>Sign out at any time to end the session on the device.</li>
             <li>Decline any device permission (camera, mic, photos, LiDAR, Face ID).</li>
             <li>Decline Microsoft Graph contact-import consent.</li>
+            <li>Turn off Outlook calendar sync with the &ldquo;Sync Outlook Calendar&rdquo; setting.</li>
             <li>Avoid AI features if you prefer not to send content to Anthropic; the App provides manual alternatives for AI-assisted actions.</li>
             <li>Request access, correction, or deletion of your data by contacting us (below).</li>
         </ul>
@@ -127,7 +144,7 @@
         <p>O&rsquo;Brien Systems &mdash; privacy inquiries: <a href="mailto:privacy@obriensys.com">privacy@obriensys.com</a><br>
         <a href="https://obriensys.com">obriensys.com</a></p>
 
-        <p class="effective">Last Updated: June 1, 2026</p>
+        <p class="effective">Last Updated: October 4, 2026</p>
     </div>
 </body>
 </html>
