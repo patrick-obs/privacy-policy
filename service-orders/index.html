@@ -65,47 +65,63 @@
         <p class="lead">OBS Service Orders (&ldquo;the App&rdquo;) is published by O&rsquo;Brien Systems (&ldquo;we&rdquo;, &ldquo;us&rdquo;). The App is a field-service tool for our staff and authorized users to create and manage service orders, preventive-maintenance visits, customers, equipment, and related work. This policy explains what data the App handles and where it goes.</p>
 
         <h2>Who can use the App</h2>
-        <p>Access requires signing in with a Microsoft Entra ID (Azure AD) account on the <strong>@obriensys.com</strong> domain, or with a local staff account issued by an O&rsquo;Brien Systems administrator. The App is intended for O&rsquo;Brien Systems personnel and authorized partners, not the general public.</p>
+        <p>Access requires signing in with a Microsoft Entra ID (Azure AD) account on the <strong>@obriensys.com</strong> domain, or with a local staff account issued by an O&rsquo;Brien Systems administrator. The App is intended for O&rsquo;Brien Systems personnel and authorized partners, not the general public. The sign-in screen also offers &ldquo;Explore Sample Data&rdquo;, a demo that needs no account and shows made-up sample records only.</p>
 
         <h2>Information we handle</h2>
 
         <h3>Account &amp; identity</h3>
-        <p>When you sign in with Microsoft, we receive your name, work email, and directory identifiers from Microsoft to identify you and control access. Authentication tokens are stored securely in the device Keychain; we never see or store your Microsoft password. Local staff accounts store a username and a salted, hashed password (never plaintext) on the device.</p>
+        <p>When you sign in with Microsoft, we receive your name, work email, and directory identifiers from Microsoft to identify you and control access. Authentication tokens are stored securely in the device Keychain; we never see or store your Microsoft password. Local staff accounts store a username and a salted, hashed password (never plaintext) on the device. Staff names, usernames, and permissions are shared through the sync described below; passwords and password hashes are never uploaded.</p>
+        <p>Your work email is recorded on each service order and record you create or change, and your name appears in each service order&rsquo;s change history, so coworkers can see who made a change. Each installation of the App also creates a random identifier for the device. It is saved with each service order the App uploads, to show which device made the change, and is not used for advertising or tracking.</p>
 
         <h3>Service &amp; customer data you create</h3>
-        <p>Service orders, preventive-maintenance events, customer records (names, site addresses, contacts, phone/email), equipment and site details, parts/inventory, labor and pricing, and notes. This is stored locally on your device and, if SharePoint sync is enabled by your organization, backed up to your organization&rsquo;s Microsoft 365 document library.</p>
+        <p>Service orders, preventive-maintenance events, customer records (names, site addresses, contacts, phone/email), equipment and site details, vendors, parts/inventory, labor and pricing, and notes. This is stored on your device. When you are signed in with Microsoft, the App also keeps it in sync with an O&rsquo;Brien Systems Microsoft 365 document library (see &ldquo;Sync &amp; sharing&rdquo; below).</p>
 
-        <h3>Photos &amp; signatures</h3>
-        <p>Photos you capture or attach to a service order for documentation, and handwritten technician and customer signatures you capture on-device to sign off on completed work. These are stored with the associated service order.</p>
+        <h3>Historical service records</h3>
+        <p>After you sign in, the App loads O&rsquo;Brien Systems&rsquo; historical service-order records (customer business names and locations, technician names, work summaries, and hours) so staff can see past work. When you are signed in with Microsoft, the App downloads the original scanned service orders for those records from our SharePoint library and keeps a copy on your device so they open offline.</p>
 
-        <h3>Location / addresses</h3>
-        <p>To place customer sites on a map and suggest nearby scheduled work, the App converts customer street addresses to map coordinates using Apple&rsquo;s geocoding service. The App does not continuously track your device&rsquo;s location.</p>
+        <h3>Photos, files &amp; signatures</h3>
+        <p>Photos and documents you attach to a service order for documentation, and handwritten technician and customer signatures you capture on the device to sign off on completed work. Photos and attached files stay on your device; this version of the App does not upload them. Signatures are part of the service order: they are included in the order record and in the signed service-order PDF, and both are uploaded by the sync described below.</p>
+
+        <h3>Addresses</h3>
+        <p>To check customer addresses and suggest nearby scheduled work, the App sends customer and service-site street addresses to Apple&rsquo;s geocoding service and saves the resulting map coordinates with the customer, service-order, and maintenance records, so the coordinates are synced with them. The App does not access your device&rsquo;s location.</p>
+
+        <h2>Sync &amp; sharing</h2>
+        <ul>
+            <li><strong>Two-way sync with Microsoft 365.</strong> When you are signed in with Microsoft, the App syncs automatically. Shortly after each change, it uploads service orders, signed service-order PDFs, customers, staff records, vendors, parts, and maintenance events to a document library on O&rsquo;Brien Systems&rsquo; SharePoint site, where authorized O&rsquo;Brien Systems staff can access them. While the App is open, and whenever you return to it, it also downloads changes made by other authorized users and devices, so records your coworkers create are stored on your device too. An O&rsquo;Brien Systems administrator can turn sync off in the App&rsquo;s settings.</li>
+            <li><strong>Service Hub.</strong> O&rsquo;Brien Systems&rsquo; internal Service Hub web tool keeps a copy of the records in that library on a company server, so authorized office staff can view and update service orders and attach files to them in a web browser after signing in. Their changes to service orders and records reach the App through the same sync. The Service Hub&rsquo;s copy is backed up to O&rsquo;Brien Systems&rsquo; Microsoft 365 OneDrive.</li>
+            <li><strong>Sharing with Field Docs.</strong> When an administrator chooses &ldquo;Publish to Field Docs&rdquo;, the App uploads each customer&rsquo;s name, address, and contact details, with a summary of its service history (date, type, status, technician, work summary, and total for each order), to a shared folder on the same SharePoint site. O&rsquo;Brien Systems&rsquo; Field Docs app shows this to signed-in staff. Signatures, attachments, and line-item pricing are not included.</li>
+            <li><strong>Sharing you choose.</strong> When you export a CSV report, share a service-order PDF, a scanned original, or an attachment, or copy an order summary, the App hands it to the iOS share sheet or clipboard, and it goes only where you send it (for example email, Messages, AirDrop, or Files).</li>
+        </ul>
 
         <h2>How we use third-party services</h2>
 
-        <h3>Microsoft (Entra ID, Graph, SharePoint / OneDrive)</h3>
-        <p>Used for sign-in and, if enabled by your organization, to sync service orders to your company&rsquo;s Microsoft 365 document library. Governed by Microsoft&rsquo;s privacy terms.</p>
+        <h3>Microsoft (Entra ID, Graph, SharePoint, OneDrive)</h3>
+        <p>Used for sign-in, the two-way sync and Field Docs sharing described above, downloading scanned service orders, and backups of the Service Hub. Governed by Microsoft&rsquo;s privacy terms.</p>
 
-        <h3>Apple (maps &amp; geocoding)</h3>
-        <p>Customer addresses are sent to Apple&rsquo;s geocoding/maps service to obtain coordinates for the map and nearby-work features. Governed by Apple&rsquo;s privacy terms.</p>
+        <h3>Apple (geocoding)</h3>
+        <p>Customer and service-site addresses are sent to Apple&rsquo;s geocoding service to obtain coordinates for address checks and nearby-work suggestions. Governed by Apple&rsquo;s privacy terms.</p>
 
-        <p><strong>We do not sell your data, and we do not use it for advertising.</strong></p>
+        <h3>Cloudflare</h3>
+        <p>Connections to the Service Hub web tool pass through Cloudflare, which verifies staff sign-in and carries the encrypted connection to our server. Governed by Cloudflare&rsquo;s privacy terms.</p>
+
+        <p>These providers handle the data only to provide their services to O&rsquo;Brien Systems, and they provide the same or equal protection of that data as this policy describes.</p>
+
+        <p><strong>We do not sell your data, and we do not use it for advertising.</strong> The App does not include advertising or analytics tools.</p>
 
         <h2>Device permissions the App requests</h2>
         <ul>
-            <li><strong>Camera</strong> &mdash; photograph equipment and field conditions to attach to service orders.</li>
-            <li><strong>Photo library</strong> &mdash; import photos to attach to service orders.</li>
+            <li><strong>Camera.</strong> Used to photograph equipment and field conditions to attach to service orders.</li>
         </ul>
-        <p>Each permission is requested only when first needed, and the App functions (with that feature unavailable) if you decline.</p>
+        <p>Each permission is requested only when first needed, and the App functions (with that feature unavailable) if you decline. To attach an existing photo or file, the App uses Apple&rsquo;s photo and file pickers, which give it only the items you pick; it does not ask for access to your whole photo library.</p>
 
         <h2>Data storage, retention &amp; security</h2>
-        <p>Your data lives primarily on your device and, if sync is enabled, in your organization&rsquo;s Microsoft 365 document library. Authentication tokens are kept in the device Keychain; identity and credential files are stored with file-level data protection. Network traffic to Microsoft and Apple is encrypted in transit (TLS). Retention follows O&rsquo;Brien Systems&rsquo; internal data-retention practices; data is removed when a record is deleted or when you sign out and clear local data, subject to backup copies retained per company policy.</p>
+        <p>Your data lives on your device and, when you are signed in with Microsoft, in O&rsquo;Brien Systems&rsquo; SharePoint library and the Service Hub copy described above, including its backups. Authentication tokens are kept in the device Keychain; identity and credential files are stored with file-level data protection. Network traffic to Microsoft and Apple is encrypted in transit (TLS). Retention follows O&rsquo;Brien Systems&rsquo; internal data-retention practices. Deleting a record in the App removes it from your device only: copies already synced stay in the SharePoint library, the Service Hub, and their backups until O&rsquo;Brien Systems removes them under those practices or at your request. Signing out ends your session but does not erase the records stored on the device; deleting the App removes them from the device.</p>
 
         <h2>Your choices</h2>
         <ul>
             <li>Sign out at any time to end the session on the device.</li>
-            <li>Decline any device permission (camera, photos).</li>
-            <li>Request access, correction, or deletion of your data by contacting us (below).</li>
+            <li>Decline the camera permission.</li>
+            <li>Request access, correction, or deletion of your data, including the copies in the SharePoint library and the Service Hub, by contacting us (below).</li>
         </ul>
 
         <h2>Children</h2>
@@ -118,7 +134,7 @@
         <p>O&rsquo;Brien Systems &mdash; privacy inquiries: <a href="mailto:privacy@obriensys.com">privacy@obriensys.com</a><br>
         <a href="https://obriensys.com">obriensys.com</a></p>
 
-        <p class="effective">Last Updated: July 13, 2026</p>
+        <p class="effective">Last Updated: October 8, 2026</p>
     </div>
 </body>
 </html>
